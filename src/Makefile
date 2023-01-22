@@ -5,7 +5,7 @@ EXECUTABLES = shell_project
 CC = g++
 
 # The FLAGS variables sets compile flags for the CC
-CFLAGS = -c -ansi -pedantic-errors -Wall
+CFLAGS = -v -c -ansi -pedantic-errors -Wall
 
 # The object files to be linked
 OBJS = main.o hierarchy.o history.o parser.o pipe.o
