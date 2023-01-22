@@ -17,7 +17,7 @@ all: $(EXECUTABLES)
 ready:
 		touch main.cpp hierarchy.cpp history.cpp parser.cpp pipe.cpp
 clean:
-		rm -f $(EXECUTABLES) $(OBJS) core.*
+		rm -f $(EXECUTABLES) $(OBJS)
 
 # Create project
 shell_project: $(OBJS)
