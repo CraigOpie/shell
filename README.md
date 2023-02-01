@@ -1,4 +1,4 @@
-# Custom Shell for Minix
+# Custom Shell for Linux/Minix
 
 Copyright (c) 2023
 College of Natural Science, Computer Science, University of Hawaii at Manoa
@@ -38,3 +38,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Developer list: 
   Craig Opie      Email: opieca at hawaii dot edu
+
+## Description
+This project is written to be deployed on a Linux machine and was compiled using the g++ compiler with the following flags: `CFLAGS = -v -c -ansi -pedantic-errors -Wall`.  The test machine was an Ubuntu 20.04 machine (x86_64).  The code meets all of the criteria in the assignment, but is susceptible to buffer overflows in the support files.  I will correct these issues when I have time.
+
+This project has been compiled and installed on a Minix VM without using a Makefile with the clang compiler and the executable is included in the included `bin` directory.  I also included the ability to change directories and run the previous command using !!

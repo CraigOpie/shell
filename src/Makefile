@@ -1,5 +1,5 @@
 # Executables to build using 'make all'
-EXECUTABLES = shell_project
+EXECUTABLES = ../bin/shell
 
 # The default compiler
 CC = g++
@@ -20,8 +20,8 @@ clean:
 		rm -f $(EXECUTABLES) $(OBJS)
 
 # Create project
-shell_project: $(OBJS)
-		$(CC) -o shell_project $(OBJS)
+../bin/shell: $(OBJS)
+		$(CC) -o ../bin/shell $(OBJS)
 main.o: main.c
 		$(CC) $(CFLAGS) main.c
 hierarchy.o: hierarchy.c hierarchy.h path.h
