@@ -15,20 +15,20 @@ all: $(EXECUTABLES)
 
 # Alter the existing files
 ready:
-		touch main.cpp hierarchy.cpp history.cpp parser.cpp pipe.cpp
+		touch main.c hierarchy.c history.c parser.c pipe.c
 clean:
 		rm -f $(EXECUTABLES) $(OBJS)
 
 # Create project
 shell_project: $(OBJS)
 		$(CC) -o shell_project $(OBJS)
-main.o: main.cpp
-		$(CC) $(CFLAGS) main.cpp
-hierarchy.o: hierarchy.cpp hierarchy.h path.h
-		$(CC) $(CFLAGS) hierarchy.cpp
-history.o: history.cpp history.h
-		$(CC) $(CFLAGS) history.cpp
-parser.o: parser.cpp parser.h
-		$(CC) $(CFLAGS) parser.cpp
-pipe.o: pipe.cpp pipe.h path.h
-		$(CC) $(CFLAGS) pipe.cpp
+main.o: main.c
+		$(CC) $(CFLAGS) main.c
+hierarchy.o: hierarchy.c hierarchy.h path.h
+		$(CC) $(CFLAGS) hierarchy.c
+history.o: history.c history.h
+		$(CC) $(CFLAGS) history.c
+parser.o: parser.c parser.h
+		$(CC) $(CFLAGS) parser.c
+pipe.o: pipe.c pipe.h path.h
+		$(CC) $(CFLAGS) pipe.c
