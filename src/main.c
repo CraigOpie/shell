@@ -43,10 +43,10 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "hierarchy.h"
-#include "history.h"
-#include "parser.h"
-#include "pipe.h"
+#include "../lib/hierarchy.h"
+#include "../lib/history.h"
+#include "../lib/parser.h"
+#include "../lib/pipe.h"
 
 using namespace std;
 

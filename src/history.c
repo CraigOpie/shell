@@ -40,7 +40,7 @@
 ********************************************************************************/
 #include <stdlib.h>
 #include <string.h>
-#include "history.h"
+#include "../lib/history.h"
 
 const unsigned int MAX_INPUT_LENGTH = 1201;
 

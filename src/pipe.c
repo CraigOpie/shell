@@ -44,8 +44,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "path.h"
-#include "pipe.h"
+#include "../lib/path.h"
+#include "../lib/pipe.h"
 
 using namespace std;
 

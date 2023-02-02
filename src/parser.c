@@ -40,7 +40,7 @@
 ********************************************************************************/
 #include <stdlib.h>
 #include <string.h>
-#include "parser.h"
+#include "../lib/parser.h"
 
 using namespace std;
 

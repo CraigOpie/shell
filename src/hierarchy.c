@@ -45,8 +45,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "hierarchy.h"
-#include "path.h"
+#include "../lib/hierarchy.h"
+#include "../lib/path.h"
 
 using namespace std;
 
