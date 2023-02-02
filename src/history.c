@@ -42,19 +42,21 @@
 #include <string.h>
 #include "history.h"
 
-using namespace std;
+const unsigned int MAX_INPUT_LENGTH = 1201;
 
 void add_history_feature(char *history[], unsigned int &history_count, char* user_input) {
 
     if (history_count < MAX_HISTORY) {
-        strcpy(history[history_count++], user_input);
+        history[history_count] = (char*) malloc(MAX_INPUT_LENGTH);
+        strncpy(history[history_count++], user_input, MAX_INPUT_LENGTH);
     }
     else {
         free(history[0]);
         for (unsigned int i = 1; i < MAX_HISTORY; i++) {
-            strcpy(history[i - 1], history[i]);
+            history[i - 1] = history[i];
         }
 
-        strcpy(history[MAX_HISTORY - 1], user_input);
+        history[MAX_HISTORY - 1] = (char*) malloc(MAX_INPUT_LENGTH);
+        strncpy(history[MAX_HISTORY - 1], user_input, MAX_INPUT_LENGTH);
     }
 }

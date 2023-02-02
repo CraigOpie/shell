@@ -50,7 +50,7 @@
 
 using namespace std;
 
-const unsigned int MAX_LINE_LENGTH = 1201;
+const unsigned int MAX_INPUT_LENGTH = 1201;
 const unsigned int MAX_COMMAND_NAME = 80;
 const unsigned int REDIR_SIZE = 2;
 const unsigned int PIPE_SIZE = 3;
@@ -60,20 +60,20 @@ int main() {
     bool running = true;
     unsigned int history_count = 0;
     int wait;
-    char user_input[MAX_LINE_LENGTH];
+    char user_input[MAX_INPUT_LENGTH];
     char *argv[BUF_SIZE], *redir_argv[REDIR_SIZE];
     char *child01_argv[PIPE_SIZE], *child02_argv[PIPE_SIZE];
     char *history[MAX_HISTORY];
 
     for (unsigned int i = 0; i < MAX_HISTORY; i++) {
-        history[i] = (char*)malloc(MAX_COMMAND_NAME);
+        history[i] = (char*)calloc(MAX_COMMAND_NAME, sizeof(char));
     }
 
     while (running) {
         printf("%s", SHELL_SYMBOL);
         fflush(stdout);
 
-        while (fgets(user_input, MAX_LINE_LENGTH, stdin) == NULL) {
+        while (fgets(user_input, MAX_INPUT_LENGTH, stdin) == NULL) {
             perror("Cannot read user input!");
             fflush(stdin);
         }
@@ -90,7 +90,8 @@ int main() {
                 fprintf(stderr, "No commands in history\n");
                 continue;
             }
-            strcpy(user_input, history[history_count - 1]);
+            strncpy(user_input, history[history_count - 1], MAX_COMMAND_NAME - 1);
+            user_input[MAX_COMMAND_NAME - 1] = '\0';
             printf("%s%s\n", SHELL_SYMBOL, user_input);
         }
 

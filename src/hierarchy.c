@@ -88,7 +88,8 @@ void child(char* argv[], char* redir_argv[]) {
     // split the path into a list of directories
     char *dirs[MAX_PATH_DIRS];
     char mypath[MAX_LINE_LENGTH];
-    strcpy(mypath, PATH);
+    strncpy(mypath, PATH, MAX_LINE_LENGTH - 1);
+    mypath[MAX_LINE_LENGTH - 1] = '\0';
     char *token = strtok(mypath, ":");
     int i = 0;
     while (token != NULL) {

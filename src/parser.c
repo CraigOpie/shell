@@ -38,6 +38,7 @@
 * Developer list: 
 *   Craig Opie      Email: opieca at hawaii dot edu
 ********************************************************************************/
+#include <stdlib.h>
 #include <string.h>
 #include "parser.h"
 
@@ -77,7 +78,9 @@ void parse_redir(char* argv[], char* redir_argv[]) {
       if (strcmp(argv[idx], "<") == 0 || strcmp(argv[idx], ">") == 0) {
          if (argv[idx + 1] != NULL) {
             redir_argv[0] = strdup(argv[idx]);
-            redir_argv[1] = strdup(argv[idx + 1]);
+            size_t length = strlen(argv[idx + 1]) + 1;
+            redir_argv[1] = (char*) malloc(length);
+            strncpy(redir_argv[1], argv[idx + 1], length);
             argv[idx] = NULL;
             argv[idx + 1] = NULL;
          }

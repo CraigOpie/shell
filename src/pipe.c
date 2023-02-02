@@ -60,7 +60,8 @@ void exec_with_pipe(char* child01_argv[], char* child02_argv[]) {
     // split the path into a list of directories
     char *dirs[MAX_PATH_DIRS];
     char mypath[MAX_LINE_LENGTH];
-    strcpy(mypath, PATH);
+    strncpy(mypath, PATH, sizeof(mypath));
+    mypath[sizeof(mypath) - 1] = '\0';
     char *token = strtok(mypath, ":");
     int i = 0;
     while (token != NULL) {

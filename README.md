@@ -40,6 +40,6 @@ Developer list:
   Craig Opie      Email: opieca at hawaii dot edu
 
 ## Description
-This project is written to be deployed on a Linux machine and was compiled using the g++ compiler with the following flags: `CFLAGS = -v -c -ansi -pedantic-errors -Wall`.  The test machine was an Ubuntu 20.04 machine (x86_64).  The code meets all of the criteria in the assignment, but is susceptible to buffer overflows in the support files.  I will correct these issues when I have time.
+This project is written to be deployed on a Linux machine and was compiled using the g++ compiler with the following flags: `CFLAGS = -v -c -ansi -pedantic-errors -Wall`.  The test machine was an Ubuntu 20.04 machine (x86_64).  The code meets all of the criteria in the assignment.  I have provided a Makefile to use on a linux OS which creates the `shell` program in the `bin` directory.  The included linux_shell and minix_shell executables have were compiled before making the strcpy fix so they are potentially vulnerable to buffer overflows.  This security vulnerability has been corrected in the current source code.
 
 This project has been compiled and installed on a Minix VM without using a Makefile with the clang compiler and the executable is included in the included `bin` directory.  I also included the ability to change directories and run the previous command using !!
